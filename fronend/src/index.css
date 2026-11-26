@@ -1,0 +1,284 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -------------------------------------------------------------------------- */
+/* SurgRisk-AI — clinical command-center design tokens                        */
+/* Tailwind CSS 3 + shadcn-style CSS variables                                */
+/* -------------------------------------------------------------------------- */
+
+:root {
+  color-scheme: light;
+
+  /* App canvas and surfaces */
+  --background: 210 40% 98%;       /* #F8FAFC */
+  --foreground: 222 47% 11%;       /* #0F172A */
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+
+  /* Brand — clinical teal */
+  --primary: 173 80% 36%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222 47% 14%;
+  --accent: 166 76% 96%;
+  --accent-foreground: 175 80% 25%;
+
+  /* Supporting surfaces and text */
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
+  --border: 214 32% 89%;
+  --input: 214 32% 89%;
+  --ring: 173 80% 36%;
+
+  /* Semantic feedback */
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+  --success: 142 71% 35%;
+  --success-foreground: 0 0% 100%;
+  --warning: 38 92% 50%;
+  --warning-foreground: 222 47% 11%;
+  --info: 199 89% 48%;
+  --info-foreground: 0 0% 100%;
+
+  /* Clinical risk levels — use for labels, not as the only risk indicator */
+  --risk-low: 142 71% 35%;
+  --risk-moderate: 38 92% 50%;
+  --risk-high: 0 72% 51%;
+  --risk-critical: 350 82% 52%;
+
+  /* Recharts palette */
+  --chart-1: 173 80% 36%;
+  --chart-2: 217 91% 60%;
+  --chart-3: 38 92% 50%;
+  --chart-4: 262 83% 63%;
+  --chart-5: 340 82% 55%;
+
+  /* shadcn-style sidebar tokens (also referenced by tailwind.config.js) */
+  --sidebar-background: 0 0% 100%;
+  --sidebar-foreground: 222 47% 15%;
+  --sidebar-primary: 173 80% 36%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 166 76% 96%;
+  --sidebar-accent-foreground: 175 80% 25%;
+  --sidebar-border: 214 32% 89%;
+  --sidebar-ring: 173 80% 36%;
+
+  --radius: 0.9rem;
+}
+
+.dark {
+  color-scheme: dark;
+
+  --background: 222 47% 8%;
+  --foreground: 210 40% 96%;
+  --card: 222 36% 11%;
+  --card-foreground: 210 40% 96%;
+  --popover: 222 36% 11%;
+  --popover-foreground: 210 40% 96%;
+
+  --primary: 166 76% 48%;
+  --primary-foreground: 222 47% 8%;
+  --secondary: 217 32% 17%;
+  --secondary-foreground: 210 40% 96%;
+  --accent: 173 45% 17%;
+  --accent-foreground: 166 76% 85%;
+
+  --muted: 217 32% 17%;
+  --muted-foreground: 215 20% 66%;
+  --border: 217 30% 21%;
+  --input: 217 30% 21%;
+  --ring: 166 76% 48%;
+
+  --destructive: 0 62% 48%;
+  --destructive-foreground: 210 40% 98%;
+  --success: 142 65% 45%;
+  --success-foreground: 222 47% 8%;
+  --warning: 38 90% 55%;
+  --warning-foreground: 222 47% 8%;
+  --info: 199 85% 58%;
+  --info-foreground: 222 47% 8%;
+
+  --risk-low: 142 65% 48%;
+  --risk-moderate: 38 90% 58%;
+  --risk-high: 0 68% 58%;
+  --risk-critical: 350 82% 63%;
+
+  --chart-1: 166 76% 48%;
+  --chart-2: 217 91% 68%;
+  --chart-3: 38 90% 58%;
+  --chart-4: 262 83% 70%;
+  --chart-5: 340 82% 66%;
+
+  --sidebar-background: 222 42% 10%;
+  --sidebar-foreground: 210 40% 94%;
+  --sidebar-primary: 166 76% 48%;
+  --sidebar-primary-foreground: 222 47% 8%;
+  --sidebar-accent: 217 32% 17%;
+  --sidebar-accent-foreground: 210 40% 96%;
+  --sidebar-border: 217 30% 21%;
+  --sidebar-ring: 166 76% 48%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    min-width: 320px;
+    min-height: 100vh;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", sans-serif;
+    font-feature-settings: "cv11", "ss01";
+    font-kerning: normal;
+  }
+
+  #root {
+    min-height: 100vh;
+    isolation: isolate;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  ::selection {
+    color: hsl(var(--primary-foreground));
+    background: hsl(var(--primary) / 0.82);
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  /* Keep number columns stable in patient tables and risk summaries. */
+  .tabular-nums,
+  time,
+  output {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer components {
+  .clinical-panel {
+    @apply rounded-2xl border border-border bg-card text-card-foreground shadow-sm;
+  }
+
+  .clinical-panel-header {
+    @apply flex items-start justify-between gap-4 border-b border-border px-5 py-4;
+  }
+
+  .clinical-section-label {
+    @apply text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground;
+  }
+
+  .clinical-metric-value {
+    @apply font-semibold tracking-tight text-foreground;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .clinical-divider {
+    @apply border-t border-border;
+  }
+
+  .risk-low {
+    color: hsl(var(--risk-low));
+  }
+
+  .risk-moderate {
+    color: hsl(var(--risk-moderate));
+  }
+
+  .risk-high {
+    color: hsl(var(--risk-high));
+  }
+
+  .risk-critical {
+    color: hsl(var(--risk-critical));
+  }
+}
+
+/* Smooth, restrained transitions: avoid applying transitions to every element. */
+@layer utilities {
+  .transition-clinical {
+    transition:
+      color 140ms cubic-bezier(0, 0, 0.2, 1),
+      background-color 140ms cubic-bezier(0, 0, 0.2, 1),
+      border-color 140ms cubic-bezier(0, 0, 0.2, 1),
+      box-shadow 140ms cubic-bezier(0, 0, 0.2, 1),
+      transform 140ms cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 2.5s ease-in-out infinite;
+  }
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.55;
+    transform: scale(1.04);
+  }
+}
+
+/* Compact scrollbar for dense clinical tables and dashboard panels. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--muted-foreground) / 0.35) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: hsl(var(--muted-foreground) / 0.32);
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.55);
+  background-clip: padding-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
