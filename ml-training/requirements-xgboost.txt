@@ -1,0 +1,2 @@
+-r requirements-core.txt
+xgboost>=2.1,<4

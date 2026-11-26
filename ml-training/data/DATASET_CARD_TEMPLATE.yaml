@@ -1,0 +1,29 @@
+dataset_name: ""
+version: ""
+owning_institution: ""
+contact_role: ""
+source_systems: []
+collection_start: "YYYY-MM-DD"
+collection_end: "YYYY-MM-DD"
+site_count: 0
+intended_population: ""
+intended_surgical_specialties: []
+prediction_index_definition: "Preoperative time at which all included features are available"
+endpoint: "30-day all-cause mortality after index surgery; final definition requires clinical approval"
+label_ascertainment_method: ""
+case_count_before_exclusions: 0
+case_count_after_exclusions: 0
+unique_patient_count: 0
+positive_outcome_count: 0
+negative_outcome_count: 0
+followup_completeness_rule: "At least 30 days of verified outcome ascertainment"
+feature_availability_windows: {}
+missingness_summary: {}
+known_data_quality_limits: []
+site_and_population_shift_risks: []
+deidentification_method: ""
+approval_reference: ""
+permitted_processing_purposes: []
+notes_modality_approved: false
+created_at: ""
+reviewed_by_role: ""

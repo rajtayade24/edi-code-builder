@@ -1,0 +1,36 @@
+{
+  "endpoint": "30_DAY_MORTALITY",
+  "random_seed": 42,
+  "split": {
+    "train_fraction": 0.70,
+    "calibration_fraction": 0.15,
+    "test_fraction": 0.15
+  },
+  "sequence": {
+    "max_length": 64,
+    "vital_features": [
+      "systolic_bp",
+      "diastolic_bp",
+      "heart_rate",
+      "respiratory_rate",
+      "temperature_c",
+      "oxygen_saturation",
+      "blood_glucose_mg_dl"
+    ]
+  },
+  "tabular": {
+    "numeric_features": [
+      "age", "bmi", "asa_class", "comorbidity_active_count", "comorbidity_mild_count",
+      "comorbidity_moderate_count", "comorbidity_severe_count", "systolic_bp", "diastolic_bp",
+      "heart_rate", "respiratory_rate", "temperature_c", "oxygen_saturation", "blood_glucose_mg_dl",
+      "lab_hgb", "lab_creatinine", "lab_sodium", "lab_potassium", "lab_albumin", "lab_platelets", "lab_wbc", "lab_inr"
+    ],
+    "categorical_features": ["sex_at_birth", "urgency", "specialty", "procedure_code", "anesthesia_type"]
+  },
+  "training": {
+    "xgboost": {"n_estimators": 500, "max_depth": 3, "learning_rate": 0.03, "subsample": 0.85, "colsample_bytree": 0.85, "reg_lambda": 2.0},
+    "bilstm": {"hidden_size": 64, "num_layers": 1, "dropout": 0.1, "epochs": 40, "batch_size": 32, "learning_rate": 0.001},
+    "gat": {"embedding_dim": 24, "hidden_size": 64, "num_heads": 4, "epochs": 40, "batch_size": 32, "learning_rate": 0.001, "max_nodes": 64},
+    "biobert": {"max_length": 384, "epochs": 3, "batch_size": 8, "learning_rate": 0.00002, "weight_decay": 0.01}
+  }
+}

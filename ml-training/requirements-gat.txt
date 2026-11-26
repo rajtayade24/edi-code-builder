@@ -1,0 +1,3 @@
+-r requirements-torch.txt
+# Phase 5 implements graph attention using native PyTorch MultiheadAttention;
+# PyTorch Geometric is not required for this initial graph contract.

@@ -1,0 +1,11 @@
+{
+  "manifest_version": "REPLACE_AFTER_MODEL_REVIEW",
+  "approved_for_use": false,
+  "validation_reference": "REQUIRED_REVIEW_REPORT_REFERENCE",
+  "weights": {
+    "xgboost": null,
+    "bilstm": null,
+    "gat": null,
+    "biobert": null
+  }
+}

@@ -1,0 +1,1 @@
+case_id,patient_id,index_time,outcome_30d_mortality,outcome_observed,followup_days,age,sex_at_birth,bmi,procedure_name,procedure_code,specialty,urgency,asa_class,anesthesia_type
