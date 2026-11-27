@@ -1,17 +1,19 @@
 from __future__ import annotations
+
 import argparse
-from pathlib import Path
 from collections import Counter
+from pathlib import Path
+
 import numpy as np
 import torch
+from surgrisk_training.artifacts import save_json, write_branch_release
+from surgrisk_training.calibration import apply_calibrator, fit_platt_calibrator
+from surgrisk_training.features import build_comorbidity_graph_records
+from surgrisk_training.metrics import evaluate_probabilities
+from surgrisk_training.networks import ComorbidityGraphAttention
+from surgrisk_training.pipeline import load_run, read_config
 from torch import nn
 from torch.utils.data import DataLoader, TensorDataset
-from surgrisk_training.pipeline import load_run, read_config
-from surgrisk_training.features import build_comorbidity_graph_records, SEVERITIES
-from surgrisk_training.networks import ComorbidityGraphAttention
-from surgrisk_training.calibration import fit_platt_calibrator, apply_calibrator
-from surgrisk_training.metrics import evaluate_probabilities
-from surgrisk_training.artifacts import save_json, write_branch_release
 
 
 def fit_vocab(graphs):
@@ -53,8 +55,10 @@ def main():
     parser.add_argument("--data-dir", required=True); parser.add_argument("--run-dir", required=True)
     parser.add_argument("--config", default="configs/training.json"); parser.add_argument("--model-version", default="gat-dev-0.1.0")
     parser.add_argument("--device", default="auto", choices=["auto", "cpu", "cuda"])
+    parser.add_argument("--min-followup-days", type=int, default=30)
+    parser.add_argument("--endpoint", default="30_DAY_MORTALITY")
     args = parser.parse_args()
-    bundle, splits = load_run(args.data_dir, args.run_dir); config = read_config(args.config)
+    bundle, splits = load_run(args.data_dir, args.run_dir, min_followup_days=args.min_followup_days); config = read_config(args.config)
     graph_records = {name: build_comorbidity_graph_records(bundle, frame) for name, frame in splits.items()}
     vocab = fit_vocab(graph_records["train"])
     settings = config.get("training", {}).get("gat", {})
@@ -82,7 +86,7 @@ def main():
     calibrator = fit_platt_calibrator(raw_cal, labels["calibration"])
     calibrated_test = apply_calibrator(raw_test, calibrator)
     metrics = evaluate_probabilities(labels["test"], calibrated_test, splits["test"]["sex_at_birth"].fillna("UNKNOWN").astype(str))
-    metrics.update({"endpoint": "30_DAY_MORTALITY", "test_split_only": True, "branch": "gat", "graph_definition": "active comorbidity nodes per case with dense within-case attention", "truncated_graph_counts": truncated})
+    metrics.update({"endpoint": args.endpoint, "test_split_only": True, "branch": "gat", "graph_definition": "active comorbidity nodes per case with dense within-case attention", "truncated_graph_counts": truncated})
     output = Path(args.run_dir) / "artifacts" / "gat"; output.mkdir(parents=True, exist_ok=True)
     torch.save(model.cpu().state_dict(), output / "model.pt")
     save_json(output / "graph-schema.json", {"condition_vocab": vocab, "severity_map": {"MILD": 1, "MODERATE": 2, "SEVERE": 3, "UNKNOWN": 0}, "max_nodes": max_nodes, "embedding_dim": int(settings.get("embedding_dim", 24)), "hidden_size": int(settings.get("hidden_size", 64)), "num_heads": int(settings.get("num_heads", 4)), "graph_definition": "Each patient's active comorbidities form one fully connected attention graph; this is not an externally curated ontology."})

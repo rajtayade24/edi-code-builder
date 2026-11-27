@@ -1,17 +1,23 @@
 from __future__ import annotations
+
 import argparse
 from pathlib import Path
-import json
+
 import numpy as np
 import torch
+from surgrisk_training.artifacts import save_json, write_branch_release
+from surgrisk_training.calibration import apply_calibrator, fit_platt_calibrator
+from surgrisk_training.features import (
+    VITAL_FEATURES,
+    build_vital_sequences,
+    fit_sequence_scaler,
+    transform_vital_sequences,
+)
+from surgrisk_training.metrics import evaluate_probabilities
+from surgrisk_training.networks import VitalBiLSTM
+from surgrisk_training.pipeline import load_run, read_config
 from torch import nn
 from torch.utils.data import DataLoader, TensorDataset
-from surgrisk_training.pipeline import load_run, read_config
-from surgrisk_training.features import build_vital_sequences, fit_sequence_scaler, transform_vital_sequences, VITAL_FEATURES
-from surgrisk_training.networks import VitalBiLSTM
-from surgrisk_training.calibration import fit_platt_calibrator, apply_calibrator
-from surgrisk_training.metrics import evaluate_probabilities
-from surgrisk_training.artifacts import save_json, write_branch_release
 
 
 def predict(model, X, lengths, device, batch_size=64):
@@ -29,8 +35,10 @@ def main():
     parser.add_argument("--data-dir", required=True); parser.add_argument("--run-dir", required=True)
     parser.add_argument("--config", default="configs/training.json"); parser.add_argument("--model-version", default="bilstm-dev-0.1.0")
     parser.add_argument("--device", default="auto", choices=["auto", "cpu", "cuda"])
+    parser.add_argument("--min-followup-days", type=int, default=30)
+    parser.add_argument("--endpoint", default="30_DAY_MORTALITY")
     args = parser.parse_args()
-    bundle, splits = load_run(args.data_dir, args.run_dir); config = read_config(args.config)
+    bundle, splits = load_run(args.data_dir, args.run_dir, min_followup_days=args.min_followup_days); config = read_config(args.config)
     seqs = {name: build_vital_sequences(bundle, frame) for name, frame in splits.items()}
     scaler = fit_sequence_scaler(seqs["train"])
     max_length = int(config["sequence"]["max_length"])
@@ -58,7 +66,7 @@ def main():
     calibrator = fit_platt_calibrator(raw_cal, labels["calibration"])
     calibrated_test = apply_calibrator(raw_test, calibrator)
     metrics = evaluate_probabilities(labels["test"], calibrated_test, splits["test"]["sex_at_birth"].fillna("UNKNOWN").astype(str))
-    metrics.update({"endpoint": "30_DAY_MORTALITY", "test_split_only": True, "branch": "bilstm", "sequence_features": VITAL_FEATURES})
+    metrics.update({"endpoint": args.endpoint, "test_split_only": True, "branch": "bilstm", "sequence_features": VITAL_FEATURES})
     output = Path(args.run_dir) / "artifacts" / "bilstm"; output.mkdir(parents=True, exist_ok=True)
     torch.save(model.cpu().state_dict(), output / "model.pt")
     save_json(output / "sequence-schema.json", {"features": VITAL_FEATURES, "scaler": scaler, "max_length": max_length, "hidden_size": int(settings.get("hidden_size", 64)), "num_layers": int(settings.get("num_layers", 1)), "dropout": float(settings.get("dropout", 0.1))})

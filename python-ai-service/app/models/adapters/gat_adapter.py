@@ -1,10 +1,20 @@
 from __future__ import annotations
-from pathlib import Path
+
 import time
+from pathlib import Path
+
 import torch
-from app.models.base import ModelAdapter
-from app.models.adapters.common import verify_release, load_json, value, calibrated_probability, make_prediction, slug
+
+from app.models.adapters.common import (
+    calibrated_probability,
+    load_json,
+    make_prediction,
+    slug,
+    value,
+    verify_release,
+)
 from app.models.adapters.net_models import ComorbidityGraphAttention
+from app.models.base import ModelAdapter
 
 SEVERITY_MAP = {"MILD": 1, "MODERATE": 2, "SEVERE": 3, "UNKNOWN": 0}
 

@@ -1,16 +1,18 @@
 from __future__ import annotations
+
 import argparse
 from pathlib import Path
+
 import numpy as np
 import torch
+from surgrisk_training.artifacts import save_json, write_branch_release
+from surgrisk_training.calibration import apply_calibrator, fit_platt_calibrator
+from surgrisk_training.features import build_case_notes
+from surgrisk_training.metrics import evaluate_probabilities
+from surgrisk_training.pipeline import load_run, read_config
 from torch import nn
 from torch.utils.data import DataLoader, TensorDataset
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
-from surgrisk_training.pipeline import load_run, read_config
-from surgrisk_training.features import build_case_notes
-from surgrisk_training.calibration import fit_platt_calibrator, apply_calibrator
-from surgrisk_training.metrics import evaluate_probabilities
-from surgrisk_training.artifacts import save_json, write_branch_release
+from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
 
 def encode_texts(tokenizer, texts, max_length):
@@ -34,8 +36,10 @@ def main():
     parser.add_argument("--base-model", default="dmis-lab/biobert-base-cased-v1.2")
     parser.add_argument("--model-version", default="biobert-dev-0.1.0")
     parser.add_argument("--device", default="auto", choices=["auto", "cpu", "cuda"])
+    parser.add_argument("--min-followup-days", type=int, default=30)
+    parser.add_argument("--endpoint", default="30_DAY_MORTALITY")
     args = parser.parse_args()
-    bundle, splits = load_run(args.data_dir, args.run_dir, require_notes=True)
+    bundle, splits = load_run(args.data_dir, args.run_dir, require_notes=True, min_followup_days=args.min_followup_days)
     notes = {name: build_case_notes(bundle, frame, require_deidentified=True) for name, frame in splits.items()}
     for name, texts in notes.items():
         missing = [idx for idx, text in enumerate(texts) if not text.strip()]
@@ -68,7 +72,7 @@ def main():
     calibrator = fit_platt_calibrator(raw_cal, labels["calibration"].numpy())
     calibrated_test = apply_calibrator(raw_test, calibrator)
     metrics = evaluate_probabilities(labels["test"].numpy(), calibrated_test, splits["test"]["sex_at_birth"].fillna("UNKNOWN").astype(str))
-    metrics.update({"endpoint": "30_DAY_MORTALITY", "test_split_only": True, "branch": "biobert", "base_model": args.base_model, "max_length": max_length, "notes_deidentified": True})
+    metrics.update({"endpoint": args.endpoint, "test_split_only": True, "branch": "biobert", "base_model": args.base_model, "max_length": max_length, "notes_deidentified": True})
     output = Path(args.run_dir) / "artifacts" / "biobert"; output.mkdir(parents=True, exist_ok=True)
     model.save_pretrained(output / "model"); tokenizer.save_pretrained(output / "model")
     save_json(output / "calibrator.json", calibrator); save_json(output / "evaluation.json", metrics)

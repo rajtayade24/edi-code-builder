@@ -1,8 +1,9 @@
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass
 from pathlib import Path
-import json
+
 import pandas as pd
 
 CASE_COLUMNS = [
@@ -39,7 +40,11 @@ def _read_csv(path: Path, required: list[str], optional: bool = False) -> pd.Dat
     return frame
 
 
-def load_dataset(data_dir: str | Path, require_deidentified_notes: bool = False) -> DatasetBundle:
+def load_dataset(
+    data_dir: str | Path,
+    require_deidentified_notes: bool = False,
+    min_followup_days: int = 30,
+) -> DatasetBundle:
     root = Path(data_dir)
     cases = _read_csv(root / "cases.csv", CASE_COLUMNS)
     sidecars = {
@@ -117,7 +122,7 @@ def load_dataset(data_dir: str | Path, require_deidentified_notes: bool = False)
     cases["outcome_observed"] = pd.to_numeric(cases["outcome_observed"], errors="coerce").fillna(0)
     cases["followup_days"] = pd.to_numeric(cases["followup_days"], errors="coerce")
     observed_label = cases["outcome_30d_mortality"].isin([0, 1])
-    eligible = (cases["outcome_observed"] == 1) & (cases["followup_days"] >= 30) & observed_label
+    eligible = (cases["outcome_observed"] == 1) & (cases["followup_days"] >= min_followup_days) & observed_label
     excluded_count = int((~eligible).sum())
     cases = cases.loc[eligible].copy().reset_index(drop=True)
     if cases.empty:
@@ -148,11 +153,11 @@ def load_dataset(data_dir: str | Path, require_deidentified_notes: bool = False)
         sidecars["notes"] = sidecars["notes"].loc[sidecars["notes"]["case_id"].isin(eligible_ids)].reset_index(drop=True)
 
     report = {
-        "eligible_cases": int(len(cases)),
+        "eligible_cases": len(cases),
         "excluded_incomplete_outcomes": excluded_count,
         "unique_patients": int(cases["patient_id"].nunique()),
         "outcome_counts": {str(k): int(v) for k, v in cases["outcome_30d_mortality"].value_counts().sort_index().items()},
-        "sidecar_rows": {name: int(len(frame)) for name, frame in sidecars.items()},
+        "sidecar_rows": {name: len(frame) for name, frame in sidecars.items()},
         "post_index_rows_excluded_by_feature_builders": future_rows,
         "notes_all_deidentified": bool(sidecars["notes"].empty or sidecars["notes"]["is_deidentified"].astype(str).str.strip().str.lower().isin(["1", "true", "yes", "y"]).all()),
     }

@@ -1,4 +1,5 @@
 from types import SimpleNamespace
+
 import pandas as pd
 from surgrisk_training.features import build_tabular_record
 

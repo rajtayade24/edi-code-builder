@@ -1,5 +1,7 @@
 from abc import ABC, abstractmethod
-from app.schemas.assessment import RiskAssessmentInput, BranchPrediction
+
+from app.schemas.assessment import BranchPrediction, RiskAssessmentInput
+
 
 class ModelAdapter(ABC):
     """Adapter contract for a locally hosted, trained and independently validated model.

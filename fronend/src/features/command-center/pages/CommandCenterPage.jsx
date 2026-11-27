@@ -16,9 +16,9 @@ import { ModelBranchDetailModal } from "../components/modals/ModelBranchDetailMo
 export default function CommandCenterPage() {
   return (
     <div className="bg-[#F8FAFC] text-[#0F172A] flex flex-col font-sans selection:bg-teal-600 selection:text-white">
-      <CommandHeader />
-
       <main className="flex-1 max-w-[1600px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+        <CommandHeader />
+
         <HeroRiskSummary />
 
         <ClinicalReportCard />
@@ -40,17 +40,6 @@ export default function CommandCenterPage() {
 
         <Toolbar />
       </main>
-
-      <div className="bg-white border-t border-slate-200 py-4 mt-4">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-2">
-          <p>&copy; 2026 SurgRisk-AI Command Center • Designed for Operating Rooms, Surgical Teams &amp; ICU Workstations</p>
-          <div className="flex items-center gap-4 font-medium">
-            <span>HIPAA Compliant</span>
-            <span>MIMIC-IV Connected</span>
-            <span>HL7 FHIR R4 Standard</span>
-          </div>
-        </div>
-      </div>
 
       <AddPatientModal />
       <HandoffPdfModal />

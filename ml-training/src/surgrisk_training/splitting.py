@@ -1,9 +1,10 @@
 from __future__ import annotations
-from pathlib import Path
+
 import json
+from pathlib import Path
+
 import numpy as np
 from sklearn.model_selection import GroupShuffleSplit
-from .data import load_dataset
 
 
 def make_patient_splits(cases, seed: int = 42, train_fraction: float = 0.70, calibration_fraction: float = 0.15, test_fraction: float = 0.15) -> dict:

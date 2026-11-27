@@ -1,0 +1,1186 @@
+{
+  "source": "Mederi Adult Cardiac Surgery Registry (Zenodo 22797059 + 19220755, CC BY 4.0)",
+  "count": 15,
+  "patients": [
+    {
+      "patientNumber": "MEDERI-0036",
+      "firstName": "CardiacCohort",
+      "lastName": "Case 0036",
+      "dateOfBirth": "1950-01-15",
+      "sexAtBirth": "FEMALE",
+      "country": "Colombia",
+      "city": "Bogota",
+      "surgicalCase": {
+        "procedureName": "Isolated Coronary Artery Bypass Grafting (CABG)",
+        "procedureCode": "ISOLATED_CABG",
+        "specialty": "Cardiac Surgery",
+        "urgency": "EMERGENCY",
+        "status": "PLANNED",
+        "plannedAt": "2026-12-03T09:00:00Z",
+        "anesthesiaType": "General Cardiac",
+        "notes": "Preoperative cardiac surgery evaluation: 73-year-old female (BMI 22.7) scheduled for emergency Isolated Coronary Artery Bypass Grafting (CABG). Echocardiography & angiography: 3-vessel CAD. Preoperative labs: Cr 0.91 mg/dL, Hb unrecorded. Comorbidity profile: critical preoperative hemodynamic state; recent MI (<90d). Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=23.29%, STS-PROM=9.33%, LVEF=N/A%."
+      },
+      "vitals": {
+        "weightKg": 58.0,
+        "heightCm": 160.0,
+        "notes": "Baseline anthropometrics from M\u00e9deri CC BY 4.0 cardiac surgery validation cohort."
+      },
+      "comorbidities": [
+        {
+          "conditionName": "Mild Renal Impairment (eGFR 51-85 mL/min)",
+          "conditionCode": "CKD_MILD",
+          "severity": "MILD",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Ventricular Tachycardia / Fibrillation",
+          "conditionCode": "VENTRICULAR_ARRHYTHMIA",
+          "severity": "SEVERE",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Arterial Hypertension",
+          "conditionCode": "HTN",
+          "severity": "MILD",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Critical Preoperative State / Cardiogenic Shock",
+          "conditionCode": "CRITICAL_PREOP_STATE",
+          "severity": "SEVERE",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Myocardial Infarction within 90 Days",
+          "conditionCode": "RECENT_MI",
+          "severity": "SEVERE",
+          "status": "ACTIVE"
+        }
+      ],
+      "labs": [
+        {
+          "labCode": "CREATININE",
+          "testName": "Serum Creatinine",
+          "numericValue": 0.91,
+          "unit": "mg/dL",
+          "resultStatus": "FINAL"
+        }
+      ],
+      "history": {
+        "category": "OTHER",
+        "title": "Zenodo M\u00e9deri Benchmark Profile (mederi-0036)",
+        "description": "Preoperative cardiac surgery evaluation: 73-year-old female (BMI 22.7) scheduled for emergency Isolated Coronary Artery Bypass Grafting (CABG). Echocardiography & angiography: 3-vessel CAD. Preoperative labs: Cr 0.91 mg/dL, Hb unrecorded. Comorbidity profile: critical preoperative hemodynamic state; recent MI (<90d). Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=23.29%, STS-PROM=9.33%, LVEF=N/A%.",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "patientNumber": "MEDERI-0900",
+      "firstName": "CardiacCohort",
+      "lastName": "Case 0900",
+      "dateOfBirth": "1969-01-15",
+      "sexAtBirth": "MALE",
+      "country": "Colombia",
+      "city": "Bogota",
+      "surgicalCase": {
+        "procedureName": "Isolated Coronary Artery Bypass Grafting (CABG)",
+        "procedureCode": "ISOLATED_CABG",
+        "specialty": "Cardiac Surgery",
+        "urgency": "ELECTIVE",
+        "status": "PLANNED",
+        "plannedAt": "2026-12-03T09:00:00Z",
+        "anesthesiaType": "General Cardiac",
+        "notes": "Preoperative cardiac surgery evaluation: 55-year-old male (BMI 22.6) scheduled for elective Isolated Coronary Artery Bypass Grafting (CABG). Echocardiography & angiography: 3-vessel CAD. Preoperative labs: Cr 0.68 mg/dL, Hb 17.0 g/dL. Comorbidity profile: LVEF 38% (moderately reduced); NYHA class 2. Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=0.41%, STS-PROM=0.18%, LVEF=38.0%."
+      },
+      "vitals": {
+        "weightKg": 66.0,
+        "heightCm": 171.0,
+        "notes": "Baseline anthropometrics from M\u00e9deri CC BY 4.0 cardiac surgery validation cohort."
+      },
+      "comorbidities": [
+        {
+          "conditionName": "Moderately Reduced LVEF (30-39%)",
+          "conditionCode": "LVEF_MODERATELY_REDUCED",
+          "severity": "MODERATE",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "NYHA Functional Class 2",
+          "conditionCode": "NYHA_CLASS_2",
+          "severity": "MILD",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Heart Failure",
+          "conditionCode": "HEART_FAILURE",
+          "severity": "MODERATE",
+          "status": "ACTIVE"
+        }
+      ],
+      "labs": [
+        {
+          "labCode": "CREATININE",
+          "testName": "Serum Creatinine",
+          "numericValue": 0.68,
+          "unit": "mg/dL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "HGB",
+          "testName": "Hemoglobin",
+          "numericValue": 17.0,
+          "unit": "g/dL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "WBC",
+          "testName": "White Blood Cell Count",
+          "numericValue": 7.0,
+          "unit": "10^3/uL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "PLATELETS",
+          "testName": "Platelets",
+          "numericValue": 255.0,
+          "unit": "10^3/uL",
+          "resultStatus": "FINAL"
+        }
+      ],
+      "history": {
+        "category": "OTHER",
+        "title": "Zenodo M\u00e9deri Benchmark Profile (mederi-0900)",
+        "description": "Preoperative cardiac surgery evaluation: 55-year-old male (BMI 22.6) scheduled for elective Isolated Coronary Artery Bypass Grafting (CABG). Echocardiography & angiography: 3-vessel CAD. Preoperative labs: Cr 0.68 mg/dL, Hb 17.0 g/dL. Comorbidity profile: LVEF 38% (moderately reduced); NYHA class 2. Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=0.41%, STS-PROM=0.18%, LVEF=38.0%.",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "patientNumber": "MEDERI-0981",
+      "firstName": "CardiacCohort",
+      "lastName": "Case 0981",
+      "dateOfBirth": "1945-01-15",
+      "sexAtBirth": "FEMALE",
+      "country": "Colombia",
+      "city": "Bogota",
+      "surgicalCase": {
+        "procedureName": "Isolated Aortic Valve Replacement + Ascending Thoracic Aorta Surgery",
+        "procedureCode": "ISOLATED_AVR+ASCENDING_AORTA",
+        "specialty": "Cardiac Surgery",
+        "urgency": "EMERGENCY",
+        "status": "PLANNED",
+        "plannedAt": "2026-12-03T09:00:00Z",
+        "anesthesiaType": "General Cardiac",
+        "notes": "Preoperative cardiac surgery evaluation: 78-year-old female (BMI 26.8) scheduled for emergency Isolated Aortic Valve Replacement + Ascending Thoracic Aorta Surgery. Echocardiography & angiography: no major valvular or multivessel lesion documented. Preoperative labs: Cr unrecorded, Hb unrecorded. Comorbidity profile: LVEF 55% (preserved); NYHA class 4; prior cardiac surgery; critical preoperative hemodynamic state. Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=37.69%, STS-PROM=N/A%, LVEF=55.0%."
+      },
+      "vitals": {
+        "weightKg": 62.0,
+        "heightCm": 152.0,
+        "notes": "Baseline anthropometrics from M\u00e9deri CC BY 4.0 cardiac surgery validation cohort."
+      },
+      "comorbidities": [
+        {
+          "conditionName": "NYHA Functional Class 4",
+          "conditionCode": "NYHA_CLASS_4",
+          "severity": "SEVERE",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Previous Cardiac Surgery / Redo Sternotomy",
+          "conditionCode": "PRIOR_CARDIAC_SURGERY",
+          "severity": "SEVERE",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Arterial Hypertension",
+          "conditionCode": "HTN",
+          "severity": "MILD",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Critical Preoperative State / Cardiogenic Shock",
+          "conditionCode": "CRITICAL_PREOP_STATE",
+          "severity": "SEVERE",
+          "status": "ACTIVE"
+        }
+      ],
+      "labs": [],
+      "history": {
+        "category": "OTHER",
+        "title": "Zenodo M\u00e9deri Benchmark Profile (mederi-0981)",
+        "description": "Preoperative cardiac surgery evaluation: 78-year-old female (BMI 26.8) scheduled for emergency Isolated Aortic Valve Replacement + Ascending Thoracic Aorta Surgery. Echocardiography & angiography: no major valvular or multivessel lesion documented. Preoperative labs: Cr unrecorded, Hb unrecorded. Comorbidity profile: LVEF 55% (preserved); NYHA class 4; prior cardiac surgery; critical preoperative hemodynamic state. Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=37.69%, STS-PROM=N/A%, LVEF=55.0%.",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "patientNumber": "MEDERI-0531",
+      "firstName": "CardiacCohort",
+      "lastName": "Case 0531",
+      "dateOfBirth": "1985-01-15",
+      "sexAtBirth": "MALE",
+      "country": "Colombia",
+      "city": "Bogota",
+      "surgicalCase": {
+        "procedureName": "Isolated Aortic Valve Replacement",
+        "procedureCode": "ISOLATED_AVR",
+        "specialty": "Cardiac Surgery",
+        "urgency": "ELECTIVE",
+        "status": "PLANNED",
+        "plannedAt": "2026-12-03T09:00:00Z",
+        "anesthesiaType": "General Cardiac",
+        "notes": "Preoperative cardiac surgery evaluation: 35-year-old male (BMI 28.1) scheduled for elective Isolated Aortic Valve Replacement. Echocardiography & angiography: moderate-severe aortic regurgitation. Preoperative labs: Cr 0.88 mg/dL, Hb 13.6 g/dL. Comorbidity profile: LVEF 46% (mildly reduced). Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=0.42%, STS-PROM=0.1%, LVEF=46.0%."
+      },
+      "vitals": {
+        "weightKg": 87.0,
+        "heightCm": 176.0,
+        "notes": "Baseline anthropometrics from M\u00e9deri CC BY 4.0 cardiac surgery validation cohort."
+      },
+      "comorbidities": [
+        {
+          "conditionName": "Mildly Reduced LVEF (40-49%)",
+          "conditionCode": "LVEF_MILDLY_REDUCED",
+          "severity": "MILD",
+          "status": "ACTIVE"
+        }
+      ],
+      "labs": [
+        {
+          "labCode": "CREATININE",
+          "testName": "Serum Creatinine",
+          "numericValue": 0.88,
+          "unit": "mg/dL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "HGB",
+          "testName": "Hemoglobin",
+          "numericValue": 13.6,
+          "unit": "g/dL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "WBC",
+          "testName": "White Blood Cell Count",
+          "numericValue": 8.64,
+          "unit": "10^3/uL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "PLATELETS",
+          "testName": "Platelets",
+          "numericValue": 218.0,
+          "unit": "10^3/uL",
+          "resultStatus": "FINAL"
+        }
+      ],
+      "history": {
+        "category": "OTHER",
+        "title": "Zenodo M\u00e9deri Benchmark Profile (mederi-0531)",
+        "description": "Preoperative cardiac surgery evaluation: 35-year-old male (BMI 28.1) scheduled for elective Isolated Aortic Valve Replacement. Echocardiography & angiography: moderate-severe aortic regurgitation. Preoperative labs: Cr 0.88 mg/dL, Hb 13.6 g/dL. Comorbidity profile: LVEF 46% (mildly reduced). Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=0.42%, STS-PROM=0.1%, LVEF=46.0%.",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "patientNumber": "MEDERI-0607",
+      "firstName": "CardiacCohort",
+      "lastName": "Case 0607",
+      "dateOfBirth": "1960-01-15",
+      "sexAtBirth": "MALE",
+      "country": "Colombia",
+      "city": "Bogota",
+      "surgicalCase": {
+        "procedureName": "Isolated Mitral Valve Replacement + Ascending Thoracic Aorta Surgery",
+        "procedureCode": "ISOLATED_MVR+ASCENDING_AORTA",
+        "specialty": "Cardiac Surgery",
+        "urgency": "URGENT",
+        "status": "PLANNED",
+        "plannedAt": "2026-12-03T09:00:00Z",
+        "anesthesiaType": "General Cardiac",
+        "notes": "Preoperative cardiac surgery evaluation: 61-year-old male (BMI 25.4) scheduled for urgent Isolated Mitral Valve Replacement + Ascending Thoracic Aorta Surgery. Echocardiography & angiography: 3-vessel CAD, moderate-severe mitral regurgitation, mitral stenosis. Preoperative labs: Cr 1.42 mg/dL, Hb 8.9 g/dL. Comorbidity profile: LVEF 65% (preserved); NYHA class 3; moderate pulmonary hypertension (PASP 45 mmHg); prior cardiac surgery; COPD; critical preoperative hemodynamic state; active endocarditis. Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=14.4%, STS-PROM=N/A%, LVEF=65.0%."
+      },
+      "vitals": {
+        "weightKg": 65.0,
+        "heightCm": 160.0,
+        "notes": "Baseline anthropometrics from M\u00e9deri CC BY 4.0 cardiac surgery validation cohort."
+      },
+      "comorbidities": [
+        {
+          "conditionName": "NYHA Functional Class 3",
+          "conditionCode": "NYHA_CLASS_3",
+          "severity": "MODERATE",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Mild Renal Impairment (eGFR 51-85 mL/min)",
+          "conditionCode": "CKD_MILD",
+          "severity": "MILD",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Moderate Pulmonary Hypertension (PASP 31-55 mmHg)",
+          "conditionCode": "PULMONARY_HYPERTENSION",
+          "severity": "MODERATE",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Previous Cardiac Surgery / Redo Sternotomy",
+          "conditionCode": "PRIOR_CARDIAC_SURGERY",
+          "severity": "SEVERE",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Arterial Hypertension",
+          "conditionCode": "HTN",
+          "severity": "MILD",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Chronic Obstructive Pulmonary Disease",
+          "conditionCode": "COPD",
+          "severity": "UNKNOWN",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Critical Preoperative State / Cardiogenic Shock",
+          "conditionCode": "CRITICAL_PREOP_STATE",
+          "severity": "SEVERE",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Active Infective Endocarditis",
+          "conditionCode": "ACTIVE_ENDOCARDITIS",
+          "severity": "SEVERE",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Heart Failure",
+          "conditionCode": "HEART_FAILURE",
+          "severity": "MODERATE",
+          "status": "ACTIVE"
+        }
+      ],
+      "labs": [
+        {
+          "labCode": "CREATININE",
+          "testName": "Serum Creatinine",
+          "numericValue": 1.42,
+          "unit": "mg/dL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "HGB",
+          "testName": "Hemoglobin",
+          "numericValue": 8.9,
+          "unit": "g/dL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "WBC",
+          "testName": "White Blood Cell Count",
+          "numericValue": 14.0,
+          "unit": "10^3/uL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "PLATELETS",
+          "testName": "Platelets",
+          "numericValue": 250.0,
+          "unit": "10^3/uL",
+          "resultStatus": "FINAL"
+        }
+      ],
+      "history": {
+        "category": "OTHER",
+        "title": "Zenodo M\u00e9deri Benchmark Profile (mederi-0607)",
+        "description": "Preoperative cardiac surgery evaluation: 61-year-old male (BMI 25.4) scheduled for urgent Isolated Mitral Valve Replacement + Ascending Thoracic Aorta Surgery. Echocardiography & angiography: 3-vessel CAD, moderate-severe mitral regurgitation, mitral stenosis. Preoperative labs: Cr 1.42 mg/dL, Hb 8.9 g/dL. Comorbidity profile: LVEF 65% (preserved); NYHA class 3; moderate pulmonary hypertension (PASP 45 mmHg); prior cardiac surgery; COPD; critical preoperative hemodynamic state; active endocarditis. Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=14.4%, STS-PROM=N/A%, LVEF=65.0%.",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "patientNumber": "MEDERI-0070",
+      "firstName": "CardiacCohort",
+      "lastName": "Case 0070",
+      "dateOfBirth": "1970-01-15",
+      "sexAtBirth": "MALE",
+      "country": "Colombia",
+      "city": "Bogota",
+      "surgicalCase": {
+        "procedureName": "Isolated Mitral Valve Replacement",
+        "procedureCode": "ISOLATED_MVR",
+        "specialty": "Cardiac Surgery",
+        "urgency": "ELECTIVE",
+        "status": "PLANNED",
+        "plannedAt": "2026-12-03T09:00:00Z",
+        "anesthesiaType": "General Cardiac",
+        "notes": "Preoperative cardiac surgery evaluation: 53-year-old male (BMI 23.5) scheduled for elective Isolated Mitral Valve Replacement. Echocardiography & angiography: moderate-severe mitral regurgitation. Preoperative labs: Cr 1.70 mg/dL, Hb 17.9 g/dL. Comorbidity profile: LVEF 68% (preserved); NYHA class 2; moderate-severe CKD. Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=0.49%, STS-PROM=0.37%, LVEF=68.0%."
+      },
+      "vitals": {
+        "weightKg": 64.0,
+        "heightCm": 165.0,
+        "notes": "Baseline anthropometrics from M\u00e9deri CC BY 4.0 cardiac surgery validation cohort."
+      },
+      "comorbidities": [
+        {
+          "conditionName": "NYHA Functional Class 2",
+          "conditionCode": "NYHA_CLASS_2",
+          "severity": "MILD",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Chronic Kidney Disease (eGFR <= 50 mL/min)",
+          "conditionCode": "CKD_SEVERE",
+          "severity": "MODERATE",
+          "status": "ACTIVE"
+        }
+      ],
+      "labs": [
+        {
+          "labCode": "CREATININE",
+          "testName": "Serum Creatinine",
+          "numericValue": 1.7,
+          "unit": "mg/dL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "HGB",
+          "testName": "Hemoglobin",
+          "numericValue": 17.9,
+          "unit": "g/dL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "PLATELETS",
+          "testName": "Platelets",
+          "numericValue": 222.0,
+          "unit": "10^3/uL",
+          "resultStatus": "FINAL"
+        }
+      ],
+      "history": {
+        "category": "OTHER",
+        "title": "Zenodo M\u00e9deri Benchmark Profile (mederi-0070)",
+        "description": "Preoperative cardiac surgery evaluation: 53-year-old male (BMI 23.5) scheduled for elective Isolated Mitral Valve Replacement. Echocardiography & angiography: moderate-severe mitral regurgitation. Preoperative labs: Cr 1.70 mg/dL, Hb 17.9 g/dL. Comorbidity profile: LVEF 68% (preserved); NYHA class 2; moderate-severe CKD. Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=0.49%, STS-PROM=0.37%, LVEF=68.0%.",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "patientNumber": "MEDERI-0604",
+      "firstName": "CardiacCohort",
+      "lastName": "Case 0604",
+      "dateOfBirth": "1967-01-15",
+      "sexAtBirth": "FEMALE",
+      "country": "Colombia",
+      "city": "Bogota",
+      "surgicalCase": {
+        "procedureName": "Aortic Valve Replacement + CABG",
+        "procedureCode": "AVR_CABG",
+        "specialty": "Cardiac Surgery",
+        "urgency": "URGENT",
+        "status": "PLANNED",
+        "plannedAt": "2026-12-03T09:00:00Z",
+        "anesthesiaType": "General Cardiac",
+        "notes": "Preoperative cardiac surgery evaluation: 54-year-old female (BMI 19.5) scheduled for urgent Aortic Valve Replacement + CABG. Echocardiography & angiography: 1-vessel CAD, aortic stenosis, moderate-severe aortic regurgitation. Preoperative labs: Cr 1.16 mg/dL, Hb 9.9 g/dL. Comorbidity profile: LVEF 30% (moderately reduced); NYHA class 2; moderate-severe CKD; peripheral vascular disease; recent MI (<90d). Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=10.03%, STS-PROM=N/A%, LVEF=30.0%."
+      },
+      "vitals": {
+        "weightKg": 45.0,
+        "heightCm": 152.0,
+        "notes": "Baseline anthropometrics from M\u00e9deri CC BY 4.0 cardiac surgery validation cohort."
+      },
+      "comorbidities": [
+        {
+          "conditionName": "Moderately Reduced LVEF (30-39%)",
+          "conditionCode": "LVEF_MODERATELY_REDUCED",
+          "severity": "MODERATE",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "NYHA Functional Class 2",
+          "conditionCode": "NYHA_CLASS_2",
+          "severity": "MILD",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Chronic Kidney Disease (eGFR <= 50 mL/min)",
+          "conditionCode": "CKD_SEVERE",
+          "severity": "MODERATE",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Peripheral Vascular / Extracardiac Arteriopathy",
+          "conditionCode": "PVD",
+          "severity": "MODERATE",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Arterial Hypertension",
+          "conditionCode": "HTN",
+          "severity": "MILD",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Myocardial Infarction within 90 Days",
+          "conditionCode": "RECENT_MI",
+          "severity": "SEVERE",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Heart Failure",
+          "conditionCode": "HEART_FAILURE",
+          "severity": "MODERATE",
+          "status": "ACTIVE"
+        }
+      ],
+      "labs": [
+        {
+          "labCode": "CREATININE",
+          "testName": "Serum Creatinine",
+          "numericValue": 1.16,
+          "unit": "mg/dL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "HGB",
+          "testName": "Hemoglobin",
+          "numericValue": 9.9,
+          "unit": "g/dL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "WBC",
+          "testName": "White Blood Cell Count",
+          "numericValue": 11.0,
+          "unit": "10^3/uL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "PLATELETS",
+          "testName": "Platelets",
+          "numericValue": 121.0,
+          "unit": "10^3/uL",
+          "resultStatus": "FINAL"
+        }
+      ],
+      "history": {
+        "category": "OTHER",
+        "title": "Zenodo M\u00e9deri Benchmark Profile (mederi-0604)",
+        "description": "Preoperative cardiac surgery evaluation: 54-year-old female (BMI 19.5) scheduled for urgent Aortic Valve Replacement + CABG. Echocardiography & angiography: 1-vessel CAD, aortic stenosis, moderate-severe aortic regurgitation. Preoperative labs: Cr 1.16 mg/dL, Hb 9.9 g/dL. Comorbidity profile: LVEF 30% (moderately reduced); NYHA class 2; moderate-severe CKD; peripheral vascular disease; recent MI (<90d). Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=10.03%, STS-PROM=N/A%, LVEF=30.0%.",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "patientNumber": "MEDERI-1356",
+      "firstName": "CardiacCohort",
+      "lastName": "Case 1356",
+      "dateOfBirth": "1965-01-15",
+      "sexAtBirth": "MALE",
+      "country": "Colombia",
+      "city": "Bogota",
+      "surgicalCase": {
+        "procedureName": "Aortic Valve Replacement + CABG + Isolated Mitral Valve Replacement",
+        "procedureCode": "AVR_CABG+ISOLATED_MVR",
+        "specialty": "Cardiac Surgery",
+        "urgency": "ELECTIVE",
+        "status": "PLANNED",
+        "plannedAt": "2026-12-03T09:00:00Z",
+        "anesthesiaType": "General Cardiac",
+        "notes": "Preoperative cardiac surgery evaluation: 60-year-old male (BMI 27.4) scheduled for elective Aortic Valve Replacement + CABG + Isolated Mitral Valve Replacement. Echocardiography & angiography: no major valvular or multivessel lesion documented. Preoperative labs: Cr 0.93 mg/dL, Hb 18.0 g/dL. Comorbidity profile: LVEF 35% (moderately reduced). Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=0.41%, STS-PROM=N/A%, LVEF=35.0%."
+      },
+      "vitals": {
+        "weightKg": 82.0,
+        "heightCm": 173.0,
+        "notes": "Baseline anthropometrics from M\u00e9deri CC BY 4.0 cardiac surgery validation cohort."
+      },
+      "comorbidities": [
+        {
+          "conditionName": "Moderately Reduced LVEF (30-39%)",
+          "conditionCode": "LVEF_MODERATELY_REDUCED",
+          "severity": "MODERATE",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Arterial Hypertension",
+          "conditionCode": "HTN",
+          "severity": "MILD",
+          "status": "ACTIVE"
+        }
+      ],
+      "labs": [
+        {
+          "labCode": "CREATININE",
+          "testName": "Serum Creatinine",
+          "numericValue": 0.93,
+          "unit": "mg/dL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "HGB",
+          "testName": "Hemoglobin",
+          "numericValue": 18.0,
+          "unit": "g/dL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "WBC",
+          "testName": "White Blood Cell Count",
+          "numericValue": 5.7,
+          "unit": "10^3/uL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "PLATELETS",
+          "testName": "Platelets",
+          "numericValue": 266.0,
+          "unit": "10^3/uL",
+          "resultStatus": "FINAL"
+        }
+      ],
+      "history": {
+        "category": "OTHER",
+        "title": "Zenodo M\u00e9deri Benchmark Profile (mederi-1356)",
+        "description": "Preoperative cardiac surgery evaluation: 60-year-old male (BMI 27.4) scheduled for elective Aortic Valve Replacement + CABG + Isolated Mitral Valve Replacement. Echocardiography & angiography: no major valvular or multivessel lesion documented. Preoperative labs: Cr 0.93 mg/dL, Hb 18.0 g/dL. Comorbidity profile: LVEF 35% (moderately reduced). Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=0.41%, STS-PROM=N/A%, LVEF=35.0%.",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "patientNumber": "MEDERI-0508",
+      "firstName": "CardiacCohort",
+      "lastName": "Case 0508",
+      "dateOfBirth": "1969-01-15",
+      "sexAtBirth": "MALE",
+      "country": "Colombia",
+      "city": "Bogota",
+      "surgicalCase": {
+        "procedureName": "Mitral Valve Replacement + CABG",
+        "procedureCode": "MVR_CABG",
+        "specialty": "Cardiac Surgery",
+        "urgency": "URGENT",
+        "status": "PLANNED",
+        "plannedAt": "2026-12-03T09:00:00Z",
+        "anesthesiaType": "General Cardiac",
+        "notes": "Preoperative cardiac surgery evaluation: 51-year-old male (BMI 13.1) scheduled for urgent Mitral Valve Replacement + CABG. Echocardiography & angiography: 3-vessel CAD, left main coronary stenosis >=50%, mitral stenosis. Preoperative labs: Cr 4.58 mg/dL, Hb 7.2 g/dL. Comorbidity profile: LVEF 56% (preserved); NYHA class 3; chronic dialysis; severe pulmonary hypertension (PASP 60 mmHg); prior cardiac surgery. Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=6.44%, STS-PROM=N/A%, LVEF=56.0%."
+      },
+      "vitals": {
+        "weightKg": 36.0,
+        "heightCm": 166.0,
+        "notes": "Baseline anthropometrics from M\u00e9deri CC BY 4.0 cardiac surgery validation cohort."
+      },
+      "comorbidities": [
+        {
+          "conditionName": "NYHA Functional Class 3",
+          "conditionCode": "NYHA_CLASS_3",
+          "severity": "MODERATE",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "End-Stage Renal Disease on Dialysis",
+          "conditionCode": "CKD_DIALYSIS",
+          "severity": "SEVERE",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Severe Pulmonary Hypertension (PASP > 55 mmHg)",
+          "conditionCode": "PULMONARY_HYPERTENSION",
+          "severity": "SEVERE",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Previous Cardiac Surgery / Redo Sternotomy",
+          "conditionCode": "PRIOR_CARDIAC_SURGERY",
+          "severity": "SEVERE",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Arterial Hypertension",
+          "conditionCode": "HTN",
+          "severity": "MILD",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Heart Failure",
+          "conditionCode": "HEART_FAILURE",
+          "severity": "MODERATE",
+          "status": "ACTIVE"
+        }
+      ],
+      "labs": [
+        {
+          "labCode": "CREATININE",
+          "testName": "Serum Creatinine",
+          "numericValue": 4.58,
+          "unit": "mg/dL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "HGB",
+          "testName": "Hemoglobin",
+          "numericValue": 7.2,
+          "unit": "g/dL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "WBC",
+          "testName": "White Blood Cell Count",
+          "numericValue": 4.0,
+          "unit": "10^3/uL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "PLATELETS",
+          "testName": "Platelets",
+          "numericValue": 246.0,
+          "unit": "10^3/uL",
+          "resultStatus": "FINAL"
+        }
+      ],
+      "history": {
+        "category": "OTHER",
+        "title": "Zenodo M\u00e9deri Benchmark Profile (mederi-0508)",
+        "description": "Preoperative cardiac surgery evaluation: 51-year-old male (BMI 13.1) scheduled for urgent Mitral Valve Replacement + CABG. Echocardiography & angiography: 3-vessel CAD, left main coronary stenosis >=50%, mitral stenosis. Preoperative labs: Cr 4.58 mg/dL, Hb 7.2 g/dL. Comorbidity profile: LVEF 56% (preserved); NYHA class 3; chronic dialysis; severe pulmonary hypertension (PASP 60 mmHg); prior cardiac surgery. Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=6.44%, STS-PROM=N/A%, LVEF=56.0%.",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "patientNumber": "MEDERI-0152",
+      "firstName": "CardiacCohort",
+      "lastName": "Case 0152",
+      "dateOfBirth": "1968-01-15",
+      "sexAtBirth": "MALE",
+      "country": "Colombia",
+      "city": "Bogota",
+      "surgicalCase": {
+        "procedureName": "Mitral Valve Replacement + CABG",
+        "procedureCode": "MVR_CABG",
+        "specialty": "Cardiac Surgery",
+        "urgency": "ELECTIVE",
+        "status": "PLANNED",
+        "plannedAt": "2026-12-03T09:00:00Z",
+        "anesthesiaType": "General Cardiac",
+        "notes": "Preoperative cardiac surgery evaluation: 55-year-old male (BMI 25.1) scheduled for elective Mitral Valve Replacement + CABG. Echocardiography & angiography: 1-vessel CAD, moderate-severe mitral regurgitation, mitral stenosis. Preoperative labs: Cr 0.64 mg/dL, Hb 12.2 g/dL. Comorbidity profile: LVEF 64% (preserved). Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=0.49%, STS-PROM=N/A%, LVEF=64.0%."
+      },
+      "vitals": {
+        "weightKg": 62.0,
+        "heightCm": 157.0,
+        "notes": "Baseline anthropometrics from M\u00e9deri CC BY 4.0 cardiac surgery validation cohort."
+      },
+      "comorbidities": [
+        {
+          "conditionName": "Arterial Hypertension",
+          "conditionCode": "HTN",
+          "severity": "MILD",
+          "status": "ACTIVE"
+        }
+      ],
+      "labs": [
+        {
+          "labCode": "CREATININE",
+          "testName": "Serum Creatinine",
+          "numericValue": 0.64,
+          "unit": "mg/dL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "HGB",
+          "testName": "Hemoglobin",
+          "numericValue": 12.2,
+          "unit": "g/dL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "WBC",
+          "testName": "White Blood Cell Count",
+          "numericValue": 8.1,
+          "unit": "10^3/uL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "PLATELETS",
+          "testName": "Platelets",
+          "numericValue": 381.0,
+          "unit": "10^3/uL",
+          "resultStatus": "FINAL"
+        }
+      ],
+      "history": {
+        "category": "OTHER",
+        "title": "Zenodo M\u00e9deri Benchmark Profile (mederi-0152)",
+        "description": "Preoperative cardiac surgery evaluation: 55-year-old male (BMI 25.1) scheduled for elective Mitral Valve Replacement + CABG. Echocardiography & angiography: 1-vessel CAD, moderate-severe mitral regurgitation, mitral stenosis. Preoperative labs: Cr 0.64 mg/dL, Hb 12.2 g/dL. Comorbidity profile: LVEF 64% (preserved). Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=0.49%, STS-PROM=N/A%, LVEF=64.0%.",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "patientNumber": "MEDERI-0024",
+      "firstName": "CardiacCohort",
+      "lastName": "Case 0024",
+      "dateOfBirth": "1939-01-15",
+      "sexAtBirth": "FEMALE",
+      "country": "Colombia",
+      "city": "Bogota",
+      "surgicalCase": {
+        "procedureName": "Ascending Thoracic Aorta Surgery",
+        "procedureCode": "ASCENDING_AORTA",
+        "specialty": "Cardiac Surgery",
+        "urgency": "URGENT",
+        "status": "PLANNED",
+        "plannedAt": "2026-12-03T09:00:00Z",
+        "anesthesiaType": "General Cardiac",
+        "notes": "Preoperative cardiac surgery evaluation: 84-year-old female (BMI 23.0) scheduled for urgent Ascending Thoracic Aorta Surgery. Echocardiography & angiography: aortic stenosis, moderate-severe mitral regurgitation. Preoperative labs: Cr unrecorded, Hb unrecorded. Comorbidity profile: moderate-severe CKD; moderate pulmonary hypertension (PASP 40 mmHg); critical preoperative hemodynamic state. Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=12.92%, STS-PROM=N/A%, LVEF=N/A%."
+      },
+      "vitals": {
+        "weightKg": 45.0,
+        "heightCm": 140.0,
+        "notes": "Baseline anthropometrics from M\u00e9deri CC BY 4.0 cardiac surgery validation cohort."
+      },
+      "comorbidities": [
+        {
+          "conditionName": "Chronic Kidney Disease (eGFR <= 50 mL/min)",
+          "conditionCode": "CKD_SEVERE",
+          "severity": "MODERATE",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Moderate Pulmonary Hypertension (PASP 31-55 mmHg)",
+          "conditionCode": "PULMONARY_HYPERTENSION",
+          "severity": "MODERATE",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Arterial Hypertension",
+          "conditionCode": "HTN",
+          "severity": "MILD",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Critical Preoperative State / Cardiogenic Shock",
+          "conditionCode": "CRITICAL_PREOP_STATE",
+          "severity": "SEVERE",
+          "status": "ACTIVE"
+        }
+      ],
+      "labs": [],
+      "history": {
+        "category": "OTHER",
+        "title": "Zenodo M\u00e9deri Benchmark Profile (mederi-0024)",
+        "description": "Preoperative cardiac surgery evaluation: 84-year-old female (BMI 23.0) scheduled for urgent Ascending Thoracic Aorta Surgery. Echocardiography & angiography: aortic stenosis, moderate-severe mitral regurgitation. Preoperative labs: Cr unrecorded, Hb unrecorded. Comorbidity profile: moderate-severe CKD; moderate pulmonary hypertension (PASP 40 mmHg); critical preoperative hemodynamic state. Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=12.92%, STS-PROM=N/A%, LVEF=N/A%.",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "patientNumber": "MEDERI-1383",
+      "firstName": "CardiacCohort",
+      "lastName": "Case 1383",
+      "dateOfBirth": "1989-01-15",
+      "sexAtBirth": "MALE",
+      "country": "Colombia",
+      "city": "Bogota",
+      "surgicalCase": {
+        "procedureName": "Ascending Thoracic Aorta Surgery",
+        "procedureCode": "ASCENDING_AORTA",
+        "specialty": "Cardiac Surgery",
+        "urgency": "ELECTIVE",
+        "status": "PLANNED",
+        "plannedAt": "2026-12-03T09:00:00Z",
+        "anesthesiaType": "General Cardiac",
+        "notes": "Preoperative cardiac surgery evaluation: 36-year-old male (BMI 23.3) scheduled for elective Ascending Thoracic Aorta Surgery. Echocardiography & angiography: no major valvular or multivessel lesion documented. Preoperative labs: Cr 1.01 mg/dL, Hb 17.5 g/dL. Comorbidity profile: LVEF 45% (mildly reduced); NYHA class 2. Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=0.41%, STS-PROM=N/A%, LVEF=45.0%."
+      },
+      "vitals": {
+        "weightKg": 69.0,
+        "heightCm": 172.0,
+        "notes": "Baseline anthropometrics from M\u00e9deri CC BY 4.0 cardiac surgery validation cohort."
+      },
+      "comorbidities": [
+        {
+          "conditionName": "Mildly Reduced LVEF (40-49%)",
+          "conditionCode": "LVEF_MILDLY_REDUCED",
+          "severity": "MILD",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "NYHA Functional Class 2",
+          "conditionCode": "NYHA_CLASS_2",
+          "severity": "MILD",
+          "status": "ACTIVE"
+        }
+      ],
+      "labs": [
+        {
+          "labCode": "CREATININE",
+          "testName": "Serum Creatinine",
+          "numericValue": 1.01,
+          "unit": "mg/dL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "HGB",
+          "testName": "Hemoglobin",
+          "numericValue": 17.5,
+          "unit": "g/dL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "WBC",
+          "testName": "White Blood Cell Count",
+          "numericValue": 7.04,
+          "unit": "10^3/uL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "PLATELETS",
+          "testName": "Platelets",
+          "numericValue": 199.0,
+          "unit": "10^3/uL",
+          "resultStatus": "FINAL"
+        }
+      ],
+      "history": {
+        "category": "OTHER",
+        "title": "Zenodo M\u00e9deri Benchmark Profile (mederi-1383)",
+        "description": "Preoperative cardiac surgery evaluation: 36-year-old male (BMI 23.3) scheduled for elective Ascending Thoracic Aorta Surgery. Echocardiography & angiography: no major valvular or multivessel lesion documented. Preoperative labs: Cr 1.01 mg/dL, Hb 17.5 g/dL. Comorbidity profile: LVEF 45% (mildly reduced); NYHA class 2. Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=0.41%, STS-PROM=N/A%, LVEF=45.0%.",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "patientNumber": "MEDERI-0463",
+      "firstName": "CardiacCohort",
+      "lastName": "Case 0463",
+      "dateOfBirth": "1963-01-15",
+      "sexAtBirth": "FEMALE",
+      "country": "Colombia",
+      "city": "Bogota",
+      "surgicalCase": {
+        "procedureName": "Mitral Valve Repair + Atrial Septal Defect Closure",
+        "procedureCode": "MV_REPAIR+ASD_CLOSURE",
+        "specialty": "Cardiac Surgery",
+        "urgency": "ELECTIVE",
+        "status": "PLANNED",
+        "plannedAt": "2026-12-03T09:00:00Z",
+        "anesthesiaType": "General Cardiac",
+        "notes": "Preoperative cardiac surgery evaluation: 57-year-old female (BMI 25.6) scheduled for elective Mitral Valve Repair + Atrial Septal Defect Closure. Echocardiography & angiography: no major valvular or multivessel lesion documented. Preoperative labs: Cr 1.03 mg/dL, Hb 14.9 g/dL. Comorbidity profile: LVEF 51% (preserved); NYHA class 2; severe pulmonary hypertension (PASP 75 mmHg). Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=1.47%, STS-PROM=0.65%, LVEF=51.0%."
+      },
+      "vitals": {
+        "weightKg": 68.0,
+        "heightCm": 163.0,
+        "notes": "Baseline anthropometrics from M\u00e9deri CC BY 4.0 cardiac surgery validation cohort."
+      },
+      "comorbidities": [
+        {
+          "conditionName": "NYHA Functional Class 2",
+          "conditionCode": "NYHA_CLASS_2",
+          "severity": "MILD",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Mild Renal Impairment (eGFR 51-85 mL/min)",
+          "conditionCode": "CKD_MILD",
+          "severity": "MILD",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Severe Pulmonary Hypertension (PASP > 55 mmHg)",
+          "conditionCode": "PULMONARY_HYPERTENSION",
+          "severity": "SEVERE",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Arterial Hypertension",
+          "conditionCode": "HTN",
+          "severity": "MILD",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Heart Failure",
+          "conditionCode": "HEART_FAILURE",
+          "severity": "MODERATE",
+          "status": "ACTIVE"
+        }
+      ],
+      "labs": [
+        {
+          "labCode": "CREATININE",
+          "testName": "Serum Creatinine",
+          "numericValue": 1.03,
+          "unit": "mg/dL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "HGB",
+          "testName": "Hemoglobin",
+          "numericValue": 14.9,
+          "unit": "g/dL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "WBC",
+          "testName": "White Blood Cell Count",
+          "numericValue": 6.13,
+          "unit": "10^3/uL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "PLATELETS",
+          "testName": "Platelets",
+          "numericValue": 214.0,
+          "unit": "10^3/uL",
+          "resultStatus": "FINAL"
+        }
+      ],
+      "history": {
+        "category": "OTHER",
+        "title": "Zenodo M\u00e9deri Benchmark Profile (mederi-0463)",
+        "description": "Preoperative cardiac surgery evaluation: 57-year-old female (BMI 25.6) scheduled for elective Mitral Valve Repair + Atrial Septal Defect Closure. Echocardiography & angiography: no major valvular or multivessel lesion documented. Preoperative labs: Cr 1.03 mg/dL, Hb 14.9 g/dL. Comorbidity profile: LVEF 51% (preserved); NYHA class 2; severe pulmonary hypertension (PASP 75 mmHg). Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=1.47%, STS-PROM=0.65%, LVEF=51.0%.",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "patientNumber": "MEDERI-0550",
+      "firstName": "CardiacCohort",
+      "lastName": "Case 0550",
+      "dateOfBirth": "1971-01-15",
+      "sexAtBirth": "MALE",
+      "country": "Colombia",
+      "city": "Bogota",
+      "surgicalCase": {
+        "procedureName": "Mitral Valve Repair",
+        "procedureCode": "MV_REPAIR",
+        "specialty": "Cardiac Surgery",
+        "urgency": "ELECTIVE",
+        "status": "PLANNED",
+        "plannedAt": "2026-12-03T09:00:00Z",
+        "anesthesiaType": "General Cardiac",
+        "notes": "Preoperative cardiac surgery evaluation: 49-year-old male (BMI 23.4) scheduled for elective Mitral Valve Repair. Echocardiography & angiography: moderate-severe mitral regurgitation. Preoperative labs: Cr 0.92 mg/dL, Hb 16.8 g/dL. Comorbidity profile: LVEF 60% (preserved). Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=0.49%, STS-PROM=0.3%, LVEF=60.0%."
+      },
+      "vitals": {
+        "weightKg": 60.0,
+        "heightCm": 160.0,
+        "notes": "Baseline anthropometrics from M\u00e9deri CC BY 4.0 cardiac surgery validation cohort."
+      },
+      "comorbidities": [
+        {
+          "conditionName": "Mild Renal Impairment (eGFR 51-85 mL/min)",
+          "conditionCode": "CKD_MILD",
+          "severity": "MILD",
+          "status": "ACTIVE"
+        }
+      ],
+      "labs": [
+        {
+          "labCode": "CREATININE",
+          "testName": "Serum Creatinine",
+          "numericValue": 0.92,
+          "unit": "mg/dL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "HGB",
+          "testName": "Hemoglobin",
+          "numericValue": 16.8,
+          "unit": "g/dL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "WBC",
+          "testName": "White Blood Cell Count",
+          "numericValue": 6.44,
+          "unit": "10^3/uL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "PLATELETS",
+          "testName": "Platelets",
+          "numericValue": 234.0,
+          "unit": "10^3/uL",
+          "resultStatus": "FINAL"
+        }
+      ],
+      "history": {
+        "category": "OTHER",
+        "title": "Zenodo M\u00e9deri Benchmark Profile (mederi-0550)",
+        "description": "Preoperative cardiac surgery evaluation: 49-year-old male (BMI 23.4) scheduled for elective Mitral Valve Repair. Echocardiography & angiography: moderate-severe mitral regurgitation. Preoperative labs: Cr 0.92 mg/dL, Hb 16.8 g/dL. Comorbidity profile: LVEF 60% (preserved). Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=0.49%, STS-PROM=0.3%, LVEF=60.0%.",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "patientNumber": "MEDERI-0001",
+      "firstName": "CardiacCohort",
+      "lastName": "Case 0001",
+      "dateOfBirth": "1956-01-15",
+      "sexAtBirth": "FEMALE",
+      "country": "Colombia",
+      "city": "Bogota",
+      "surgicalCase": {
+        "procedureName": "Isolated Mitral Valve Replacement",
+        "procedureCode": "ISOLATED_MVR",
+        "specialty": "Cardiac Surgery",
+        "urgency": "ELECTIVE",
+        "status": "PLANNED",
+        "plannedAt": "2026-12-03T09:00:00Z",
+        "anesthesiaType": "General Cardiac",
+        "notes": "Preoperative cardiac surgery evaluation: 67-year-old female (BMI 23.1) scheduled for elective Isolated Mitral Valve Replacement. Echocardiography & angiography: moderate-severe mitral regurgitation. Preoperative labs: Cr 0.78 mg/dL, Hb 14.1 g/dL. Comorbidity profile: LVEF 60% (preserved); NYHA class 2; moderate pulmonary hypertension (PASP 32 mmHg). Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=0.88%, STS-PROM=1.06%, LVEF=60.0%."
+      },
+      "vitals": {
+        "weightKg": 57.0,
+        "heightCm": 157.0,
+        "notes": "Baseline anthropometrics from M\u00e9deri CC BY 4.0 cardiac surgery validation cohort."
+      },
+      "comorbidities": [
+        {
+          "conditionName": "NYHA Functional Class 2",
+          "conditionCode": "NYHA_CLASS_2",
+          "severity": "MILD",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Mild Renal Impairment (eGFR 51-85 mL/min)",
+          "conditionCode": "CKD_MILD",
+          "severity": "MILD",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Moderate Pulmonary Hypertension (PASP 31-55 mmHg)",
+          "conditionCode": "PULMONARY_HYPERTENSION",
+          "severity": "MODERATE",
+          "status": "ACTIVE"
+        },
+        {
+          "conditionName": "Arterial Hypertension",
+          "conditionCode": "HTN",
+          "severity": "MILD",
+          "status": "ACTIVE"
+        }
+      ],
+      "labs": [
+        {
+          "labCode": "CREATININE",
+          "testName": "Serum Creatinine",
+          "numericValue": 0.78,
+          "unit": "mg/dL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "HGB",
+          "testName": "Hemoglobin",
+          "numericValue": 14.1,
+          "unit": "g/dL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "WBC",
+          "testName": "White Blood Cell Count",
+          "numericValue": 5.33,
+          "unit": "10^3/uL",
+          "resultStatus": "FINAL"
+        },
+        {
+          "labCode": "PLATELETS",
+          "testName": "Platelets",
+          "numericValue": 191.0,
+          "unit": "10^3/uL",
+          "resultStatus": "FINAL"
+        }
+      ],
+      "history": {
+        "category": "OTHER",
+        "title": "Zenodo M\u00e9deri Benchmark Profile (mederi-0001)",
+        "description": "Preoperative cardiac surgery evaluation: 67-year-old female (BMI 23.1) scheduled for elective Isolated Mitral Valve Replacement. Echocardiography & angiography: moderate-severe mitral regurgitation. Preoperative labs: Cr 0.78 mg/dL, Hb 14.1 g/dL. Comorbidity profile: LVEF 60% (preserved); NYHA class 2; moderate pulmonary hypertension (PASP 32 mmHg). Reference baseline risk calculators (M\u00e9deri CC BY 4.0): EuroSCORE II=0.88%, STS-PROM=1.06%, LVEF=60.0%.",
+        "status": "ACTIVE"
+      }
+    }
+  ]
+}

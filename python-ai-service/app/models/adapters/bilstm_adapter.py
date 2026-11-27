@@ -1,10 +1,21 @@
 from __future__ import annotations
-from pathlib import Path
+
 import time
+from pathlib import Path
+
 import numpy as np
-from app.models.base import ModelAdapter
-from app.models.adapters.common import verify_release, load_json, value, as_float, calibrated_probability, make_prediction, parse_time
+
+from app.models.adapters.common import (
+    as_float,
+    calibrated_probability,
+    load_json,
+    make_prediction,
+    parse_time,
+    value,
+    verify_release,
+)
 from app.models.adapters.net_models import VitalBiLSTM
+from app.models.base import ModelAdapter
 
 FEATURES = ["systolic_bp", "diastolic_bp", "heart_rate", "respiratory_rate", "temperature_c", "oxygen_saturation", "blood_glucose_mg_dl"]
 

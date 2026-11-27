@@ -1,5 +1,6 @@
 """Torch model definitions. Import this module only after installing PyTorch."""
 from __future__ import annotations
+
 import torch
 from torch import nn
 

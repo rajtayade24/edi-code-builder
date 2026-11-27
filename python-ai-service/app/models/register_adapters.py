@@ -1,8 +1,8 @@
-from pathlib import Path
 import logging
+
 from app.core.config import settings
-from app.models.registry import ModelRegistry
 from app.models.adapters.common import verify_release
+from app.models.registry import ModelRegistry
 
 logger = logging.getLogger(__name__)
 
@@ -30,6 +30,6 @@ def register_available_adapters(registry: ModelRegistry) -> None:
             adapter = adapter_class(branch_dir)
             registry.register(adapter)
             logger.info("Approved %s model adapter loaded.", branch_id)
-        except Exception as exc:
+        except (ImportError, OSError, ValueError, RuntimeError, KeyError, TypeError) as exc:
             # Never log payloads or model input values. This message is deployment metadata only.
             logger.warning("%s adapter remains NOT_CONFIGURED (%s).", branch_id, type(exc).__name__)

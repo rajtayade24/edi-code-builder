@@ -1,4 +1,3 @@
-import numpy as np
 from surgrisk_training.metrics import evaluate_probabilities
 
 

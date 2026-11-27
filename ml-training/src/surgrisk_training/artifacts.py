@@ -1,10 +1,11 @@
 from __future__ import annotations
-from pathlib import Path
-from datetime import datetime, timezone
+
 import hashlib
 import json
 import platform
 import sys
+from datetime import UTC, datetime
+from pathlib import Path
 
 
 def save_json(path: str | Path, payload: dict) -> None:
@@ -30,7 +31,7 @@ def write_branch_release(branch_dir: str | Path, branch_id: str, model_version: 
     save_json(directory / "release.json", {
         "branch_id": branch_id,
         "model_version": model_version,
-        "created_at": datetime.now(timezone.utc).isoformat(),
+        "created_at": datetime.now(UTC).isoformat(),
         "approved_for_use": False,
         "calibration_status": "PENDING_EXTERNAL_REVIEW",
         "validation_reference": None,

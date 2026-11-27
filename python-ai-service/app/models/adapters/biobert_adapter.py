@@ -1,10 +1,20 @@
 from __future__ import annotations
-from pathlib import Path
+
 import time
+from pathlib import Path
+
 import torch
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
+from transformers import AutoModelForSequenceClassification, AutoTokenizer
+
+from app.models.adapters.common import (
+    MissingModalityError,
+    calibrated_probability,
+    load_json,
+    make_prediction,
+    verify_release,
+)
 from app.models.base import ModelAdapter
-from app.models.adapters.common import verify_release, load_json, calibrated_probability, make_prediction, MissingModalityError
+
 
 class BioBERTAdapter(ModelAdapter):
     branch_id = "biobert"

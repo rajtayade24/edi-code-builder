@@ -1,4 +1,4 @@
-import { Activity, ArrowRight, ShieldCheck, UserPlus, Users } from "lucide-react";
+import { Activity, ArrowRight, ShieldCheck, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -10,33 +10,7 @@ export default function ClinicalHomePage() {
   const isAdmin = user?.role === "ADMIN";
 
   if (!isAdmin) {
-    return (
-      <div>
-        <div className="border-b border-slate-200 bg-slate-50 px-4 py-2.5 sm:px-6 lg:px-8 dark:border-slate-800 dark:bg-slate-900">
-          <div className="mx-auto flex max-w-[1600px] flex-wrap items-center justify-between gap-3 text-xs">
-            <p className="text-slate-600 dark:text-slate-300">
-              Signed in as <strong>{user?.firstName} {user?.lastName}</strong> ({user?.role || "CLINICIAN"}
-              {user?.institution ? ` · ${user.institution}` : ""})
-            </p>
-            <div className="flex flex-wrap items-center gap-2">
-              <Button asChild size="sm" variant="outline" className="h-8 rounded-lg text-xs">
-                <Link to="/patients">
-                  <Users className="mr-1.5 h-3.5 w-3.5" />
-                  Patient Records
-                </Link>
-              </Button>
-              <Button asChild size="sm" className="h-8 rounded-lg text-xs">
-                <Link to="/patients/new">
-                  <UserPlus className="mr-1.5 h-3.5 w-3.5" />
-                  Register Patient
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-        <CommandCenterPage />
-      </div>
-    );
+    return <CommandCenterPage />;
   }
 
   return (

@@ -6,10 +6,11 @@ import { useNavigate } from "react-router-dom";
 
 export default function NotFound() {
   const navigate = useNavigate();
+  const MotionDiv = motion.div;
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-slate-50 via-blue-50 to-white px-4">
-      <motion.div
+      <MotionDiv
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -58,7 +59,7 @@ export default function NotFound() {
 
           </CardContent>
         </Card>
-      </motion.div>
+      </MotionDiv>
     </div>
   );
 }

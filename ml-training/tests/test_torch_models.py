@@ -1,7 +1,7 @@
 import pytest
 
 torch = pytest.importorskip("torch")
-from surgrisk_training.networks import VitalBiLSTM, ComorbidityGraphAttention
+from surgrisk_training.networks import ComorbidityGraphAttention, VitalBiLSTM
 
 
 def test_bilstm_forward_shape():

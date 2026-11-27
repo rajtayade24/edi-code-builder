@@ -6,12 +6,12 @@ export default {
   content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
 
   theme: {
-    container: { 
+    container: {
       center: true,
-      padding: { // px-4 py-4 sm:px-6 lg:px-8
-        DEFAULT: "0.5rem", // mobile
+      padding: {
+        DEFAULT: "0.5rem",
         sm: "1.5rem",
-        lg: "2rem",      // desktop
+        lg: "2rem",
       },
       screens: {
         "2xl": "1400px",
@@ -79,7 +79,6 @@ export default {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        ringOffset: "hsl(var(--background))",
 
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -99,11 +98,7 @@ export default {
           5: "hsl(var(--chart-5))",
         },
       },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
+
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

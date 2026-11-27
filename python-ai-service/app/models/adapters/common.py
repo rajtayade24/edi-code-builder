@@ -1,11 +1,11 @@
 from __future__ import annotations
-from pathlib import Path
-from datetime import datetime, timezone
+
 import hashlib
 import json
 import math
 import re
-import time
+from datetime import UTC, datetime
+from pathlib import Path
 
 from app.schemas.assessment import BranchPrediction
 
@@ -106,12 +106,15 @@ def make_prediction(branch_id: str, probability: float, release: dict, latency_m
 
 def parse_time(raw):
     if raw is None:
-        return datetime.min.replace(tzinfo=timezone.utc)
+        return datetime.min.replace(tzinfo=UTC)
     try:
-        parsed = raw if isinstance(raw, datetime) else datetime.fromisoformat(str(raw).replace("Z", "+00:00"))
-        return parsed if parsed.tzinfo is not None else parsed.replace(tzinfo=timezone.utc)
+        parsed = (
+            raw if isinstance(raw, datetime)
+            else datetime.fromisoformat(str(raw).replace("Z", "+00:00"))  # noqa: FURB162
+        )
+        return parsed if parsed.tzinfo is not None else parsed.replace(tzinfo=UTC)
     except (TypeError, ValueError):
-        return datetime.min.replace(tzinfo=timezone.utc)
+        return datetime.min.replace(tzinfo=UTC)
 
 
 def slug(value_text: str) -> str:

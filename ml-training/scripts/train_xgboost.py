@@ -1,13 +1,18 @@
 from __future__ import annotations
+
 import argparse
 from pathlib import Path
-import numpy as np
-from xgboost import XGBClassifier
-from surgrisk_training.pipeline import load_run, read_config
-from surgrisk_training.features import build_tabular_records, fit_tabular_schema, transform_tabular
-from surgrisk_training.calibration import fit_platt_calibrator, apply_calibrator
-from surgrisk_training.metrics import evaluate_probabilities
+
 from surgrisk_training.artifacts import save_json, write_branch_release
+from surgrisk_training.calibration import apply_calibrator, fit_platt_calibrator
+from surgrisk_training.features import (
+    build_tabular_records,
+    fit_tabular_schema,
+    transform_tabular,
+)
+from surgrisk_training.metrics import evaluate_probabilities
+from surgrisk_training.pipeline import load_run, read_config
+from xgboost import XGBClassifier
 
 
 def main():
@@ -16,8 +21,10 @@ def main():
     parser.add_argument("--run-dir", required=True)
     parser.add_argument("--config", default="configs/training.json")
     parser.add_argument("--model-version", default="xgboost-dev-0.1.0")
+    parser.add_argument("--min-followup-days", type=int, default=30)
+    parser.add_argument("--endpoint", default="30_DAY_MORTALITY")
     args = parser.parse_args()
-    bundle, splits = load_run(args.data_dir, args.run_dir)
+    bundle, splits = load_run(args.data_dir, args.run_dir, min_followup_days=args.min_followup_days)
     config = read_config(args.config)
     train_records = build_tabular_records(bundle, splits["train"])
     calibration_records = build_tabular_records(bundle, splits["calibration"])
@@ -38,7 +45,7 @@ def main():
     calibrator = fit_platt_calibrator(raw_cal, y_cal)
     calibrated_test = apply_calibrator(model.predict_proba(X_test)[:, 1], calibrator)
     metrics = evaluate_probabilities(y_test, calibrated_test, splits["test"]["sex_at_birth"].fillna("UNKNOWN").astype(str))
-    metrics.update({"endpoint": "30_DAY_MORTALITY", "test_split_only": True, "calibration_split_case_count": int(len(y_cal)), "branch": "xgboost"})
+    metrics.update({"endpoint": args.endpoint, "test_split_only": True, "calibration_split_case_count": len(y_cal), "branch": "xgboost"})
     output = Path(args.run_dir) / "artifacts" / "xgboost"
     output.mkdir(parents=True, exist_ok=True)
     model.save_model(str(output / "model.json"))

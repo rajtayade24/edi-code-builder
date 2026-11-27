@@ -1,6 +1,7 @@
-from pathlib import Path
 import json
 import math
+from pathlib import Path
+
 from app.core.config import settings
 from app.models.base import ModelAdapter
 from app.schemas.assessment import RiskAssessmentInput

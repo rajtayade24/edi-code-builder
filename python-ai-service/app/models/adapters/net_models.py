@@ -2,6 +2,7 @@
 import torch
 from torch import nn
 
+
 class VitalBiLSTM(nn.Module):
     def __init__(self, input_size, hidden_size=64, num_layers=1, dropout=0.1):
         super().__init__()

@@ -1,4 +1,4 @@
-from app.models.registry import ModelRegistry, ModelNotReadyError
+from app.models.registry import ModelNotReadyError, ModelRegistry
 from app.schemas.assessment import RiskAssessmentInput
 
 

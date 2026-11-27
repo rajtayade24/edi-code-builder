@@ -1,10 +1,16 @@
 import hmac
-from fastapi import FastAPI, Header, HTTPException, Depends
+
+from fastapi import Depends, FastAPI, Header, HTTPException
 from fastapi.responses import JSONResponse
+
 from app.core.config import settings
-from app.models.registry import model_registry, ModelNotReadyError, EnsembleNotApprovedError
-from app.models.register_adapters import register_available_adapters
 from app.models.adapters.common import MissingModalityError
+from app.models.register_adapters import register_available_adapters
+from app.models.registry import (
+    EnsembleNotApprovedError,
+    ModelNotReadyError,
+    model_registry,
+)
 from app.schemas.assessment import RiskAssessmentInput
 
 register_available_adapters(model_registry)

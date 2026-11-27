@@ -1,5 +1,5 @@
-from fastapi.testclient import TestClient
 from app.main import app, require_internal_token
+from fastapi.testclient import TestClient
 
 client = TestClient(app)
 

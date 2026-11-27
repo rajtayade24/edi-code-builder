@@ -1,5 +1,5 @@
 import numpy as np
-from surgrisk_training.calibration import fit_platt_calibrator, apply_calibrator
+from surgrisk_training.calibration import apply_calibrator, fit_platt_calibrator
 
 
 def test_platt_calibrator_returns_probabilities():

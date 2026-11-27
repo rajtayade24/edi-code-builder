@@ -1,12 +1,23 @@
 from __future__ import annotations
-from pathlib import Path
+
 import json
+from pathlib import Path
+
 from .data import load_dataset
 from .splitting import load_splits
 
 
-def load_run(data_dir: str | Path, run_dir: str | Path, require_notes: bool = False):
-    bundle = load_dataset(data_dir, require_deidentified_notes=require_notes)
+def load_run(
+    data_dir: str | Path,
+    run_dir: str | Path,
+    require_notes: bool = False,
+    min_followup_days: int = 30,
+):
+    bundle = load_dataset(
+        data_dir,
+        require_deidentified_notes=require_notes,
+        min_followup_days=min_followup_days,
+    )
     splits_path = Path(run_dir) / "splits.json"
     if not splits_path.exists():
         raise FileNotFoundError(f"{splits_path} not found; run scripts/create_splits.py first.")

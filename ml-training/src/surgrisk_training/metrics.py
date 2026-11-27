@@ -1,8 +1,14 @@
 from __future__ import annotations
+
 import numpy as np
-from sklearn.metrics import roc_auc_score, average_precision_score, brier_score_loss, log_loss
 from scipy.special import logit
 from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import (
+    average_precision_score,
+    brier_score_loss,
+    log_loss,
+    roc_auc_score,
+)
 
 
 def evaluate_probabilities(labels, probabilities, subgroup_values=None, min_subgroup_n: int = 30) -> dict:
@@ -15,10 +21,10 @@ def evaluate_probabilities(labels, probabilities, subgroup_values=None, min_subg
         cal.fit(logit(p).reshape(-1, 1), y)
         cal_intercept = float(cal.intercept_[0])
         cal_slope = float(cal.coef_[0][0])
-    except Exception:
+    except (ValueError, TypeError, ArithmeticError):
         cal_intercept, cal_slope = None, None
     result = {
-        "n": int(len(y)),
+        "n": len(y),
         "events": int(y.sum()),
         "non_events": int((1 - y).sum()),
         "auroc": float(roc_auc_score(y, p)),
